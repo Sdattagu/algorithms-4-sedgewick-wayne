@@ -11,3 +11,5 @@ Give a high-level description of what it does when presented with a positive int
     StdOut.println();
 
 **
+
+It prints the binary representation of N.

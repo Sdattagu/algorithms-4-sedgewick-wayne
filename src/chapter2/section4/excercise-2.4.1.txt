@@ -1,0 +1,37 @@
+**
+Suppose that the sequence P R I O * R * * I * T * Y * * * Q U E * * * U * E
+(where a letter means 'insert' and n asterisk means 'remove the maximum') is
+applied to an initially empty priority queue. Give the sequence of letters
+returned by the 'remove the maximum' operations.
+**
+
+operation   argument    return-value    size    contents(unordered)     contents (ordered)
+-------------------------------------------------------------------------------------------
+insert      P                           1       P                       P
+insert      R                           2       P R                     P Q
+insert      I                           3       P R I                   I P R
+insert      O                           4       P R I O                 I O P R
+remove-max              R               3       P I O                   I O P
+insert      R                           4       P I O R                 I O P R
+remove-max              R               3       P I O                   I O P
+remove-max              P               2       I O                     I O
+insert      I                           3       I O I                   I I O
+remove-max              O               2       I I                     I I
+insert      T                           3       I I T                   I I T
+remove-max              T               2       I I                     I I
+insert      Y                           3       I I Y                   I I Y
+remove-max              Y               2       I I                     I I
+remove-max              I               1       I                       I
+remove-max              I               0
+insert      Q                           1       Q                       Q
+insert      U                           2       Q U                     Q U
+insert      E                           3       Q U E                   E Q U
+remove-max              U               2       Q E                     E Q
+remove-max              Q               1       E                       E
+remove-max              E               0
+insert      U                           1       U                       U
+remove-max              U               0
+insert      E                           1       E                       E
+
+R R P I T Y I I U Q E U
+

@@ -1,0 +1,62 @@
+**
+
+(1) Draw all of the different max-heaps that can be made from the five keys:
+A B C D E
+
+(2) then, draw all of the different max-heaps that can be made from the five keys:
+A1 A2 A3 B1 B2
+    *note: numbers just differentiate copies of the same char. helps me draw the stack trace. it's effectively A A A B B.
+
+**
+
+                            1
+                        2       3
+                    4       5
+
+(1) we know E has to be at root.
+consider all possible sequences of letters A B C D coming in.
+there are 24 possible permutations of those letters as input stream.
+which of these 24 yield a valid max-heap?
+
+We know D has to be either 2 | 3, since the other chars are smaller.
+if D is on 2:
+    C can be either 3, 4, or 5.
+        if C is 3:
+            A can be either 4 or 5.
+                if A is 4:
+                    B is 5. -> [E, D, C, A, B].
+                if A is 5:
+                    B is 4. -> [E, D, C, B, A].
+        if C is 4:
+            A can be either 3 or 5.
+                if A is 3:
+                    B is 5. -> [E, D, A, C, B].
+                if A is 5:
+                    B is 3. -> [E, D, B, C, A].
+        if C is 5:
+            A can be either 3 or 4.
+                if A is 3:
+                    B is 4. -> {E, D, A, B, C].
+                if A is 4:
+                    B is 3. -> [E, D, B, A, C].
+
+if D is on 3:
+    C has to be on 2.
+        therefore, A and B can be either 4 or 5 respectively. That yields the last two possible heaps, for a total of 8.
+
+
+(2) We know one of the B1 | B2 has to be root.
+        if B1 is root:
+            B2 can be 2 | 3.
+                If B2 is 2:
+                    A1, A2, and A3 fill in 3, 4, and 5. there's only one distinct heap from this.
+                        B
+                      B   A
+                    A   A
+
+                If B2 is 3:
+                    A1, A2, and A3 fill in 2, 4, or 5. there's only one distinct heap from this.
+                        B
+                     A     B
+                  A     A
+

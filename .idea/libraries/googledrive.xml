@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="googledrive">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/googledrive/google-api-client-1.24.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/googledrive/jetty-6.1.26.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/googledrive/com.fasterxml.jackson.core.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/googledrive/google-http-client-jackson2-1.24.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/googledrive/google-oauth-client-jetty-1.24.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/googledrive/google-http-client-1.24.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/googledrive/jetty-util-6.1.26.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/googledrive/google-api-services-drive-v3-rev124-1.24.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/googledrive/google-oauth-client-1.24.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/googledrive/google-oauth-client-java6-1.24.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/googledrive/javax.servlet-3.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

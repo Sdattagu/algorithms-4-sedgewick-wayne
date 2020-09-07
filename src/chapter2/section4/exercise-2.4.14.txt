@@ -1,0 +1,11 @@
+**
+
+What is the minimum number of items that must be exchanged during a 'remove-max' operation
+in a heap of size N, with no duplicate keys?
+
+Give a heap of size 15 for which the minimum is achieved.
+
+Answer the same questions for two and three successive 'remove-max' operations.
+
+**
+

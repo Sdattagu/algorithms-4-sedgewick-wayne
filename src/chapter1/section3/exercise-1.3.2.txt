@@ -1,0 +1,32 @@
+**
+
+Give the output printed by java Stack for the input:
+
+it was - the best - of times - - - it was - the - -
+
+word means push, - means pop.
+**
+
+The java Stack class represents a last-in-first-out (LIFO) stack of objects.
+https://docs.oracle.com/javase/7/docs/api/java/util/Stack.html
+
+operation   argument    return-value    size    content
+-------------------------------------------------------------------------------------------
+push        it                          1       it //empty stack -> push 'it' on top
+push        was                         2       was -> it //was goes on top of it
+pop                     was             1       it //was was top of stack, goes out
+push        the                         2       the -> it
+push        best                        3       best -> the -> it
+pop                     best            2       the -> it
+push        of                          3       of -> the -> it
+push        times                       4       times -> of -> the -> it
+pop                     times           3       of -> the -> it
+pop                     of              2       the -> it
+pop                     the             1       it
+push        it                          2       it -> it
+push        was                         3       was -> it -> it
+pop                     was             2       it -> it
+push        the                         3       was -> it -> it
+pop                     was             2       it -> it
+pop                     it              1       it
+

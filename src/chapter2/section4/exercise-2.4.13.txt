@@ -1,0 +1,5 @@
+**
+
+Describe a way to avoid the j < N test in sink().
+
+**

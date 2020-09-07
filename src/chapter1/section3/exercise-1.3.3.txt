@@ -1,0 +1,84 @@
+**
+Suppose that a client performs an intermixed sequence of (stack) push and pop operations.
+The push operations put the integers 0-9 in order onto the stack;
+the pop operations print out the return values.
+Which of the following sequence(s) could NOT occur?
+
+a. 4 3 2 1 0 9 8 7 6 5
+b. 4 6 8 7 5 3 2 9 0 1
+c. 2 5 6 7 4 8 9 3 1 0
+d. 4 3 2 1 0 5 6 7 8 9
+e. 1 2 3 4 5 6 9 8 7 0
+f. 0 4 6 5 3 8 1 7 2 9
+g. 1 4 7 9 8 6 5 3 0 2
+
+**
+
+since stack and pops are intermixed, there are many possible combinations of sequences possible.
+the limiting factor here is that the client has to put numbers onto the stack in order. this cuts down on the possibilities.
+what are all possible possibilities?
+
+lets work with a smaller set: integers 0-5. can we find a pattern?
+
+1. stack is empty in the beginning. Client has to push '0' onto the stack.
+2. client can pop, or push '1'. We separate into two event paths. 'a' is push case, 'b' is pop case.
+    2a. if client pushes, stack='1->0'
+        3a. stack='2->1->0' ; output=''
+            4a. stack = '3->2->1->0' ; output=''
+                5a. stack = '4->3->2->1->0' ; output=''
+                    6a. stack='5->4->3->2->1->0' ; output=''
+                        ====> output='5 4 3 2 1 0'
+                    6b. stack='3->2->1->0' ; output='4'
+                        7a. stack='5->3->2->1->0' ; output='4'
+                            ====> output='4 5 3 2 1 0'
+                5b. stack = '2->1->0' ; output='3'
+                    6a. stack = '4->2->1->0' ; output='3'
+                        7a. stack = '5->4->2->1->0' ; output='3'
+                            ====> output='3 5 4 2 1 0'
+                        7b. stack = '2->1->0' ; output='3 4'
+                            8a. stack = '5->2->1->0' ; output='3 4'
+                                ====> output='3 4 5 2 1 0'
+                            8b. stack = '2->1->0' ; output='3 4'
+                                9a. stack = '5->2->1->0' ; output='3 4'
+                                    8a. stack = '5->2->1->0' ; output='3 4'
+                                        ====> output='3 4 5 2 1 0' ***same as case 7b->8a.****
+                                9b. stack = '1->0' ; output='3 4 2'
+                                    10a. stack = '5->1->0' ; output='3 4 2'
+                                        ====> output = '3 4 2 5 1 0'
+                                    10b. stack = '0' ; output='3 4 2 1'
+                                        11a. stack = '5->0' ; output='3 4 2 1'
+                                            ====> output = '3 4 2 1 5 0'
+                                        11b. stack = '' output='3 4 2 1 0'.
+                                            12a. stack = '5' output='3 4 2 1 0'
+                                                ====> output='5 3 4 2 1 0'.
+                                                ****** NO MORE CASES IN THIS BRANCH****
+
+                    6b. stack = '1->0' ; output='3 2'
+                        7a. stack = '1->0' ; output='3 2'
+                        7b. stack = '0' ; output='3 2 1'
+
+            4b. stack='1->0' ; output='2'
+                5a. stack='3->1->0' ; output='2'
+                    6a. stack='4->3->1->0' ; output='2'
+                        7a. stack='5->4->3->1->0' ; output='2'
+                            => output='2 5 4 3 1 0'
+        3b. stack='0' ; output='1'
+
+    2b. if client pops, output is: '0'
+        3. client must push: stack='1'
+            4a. output: '0 1'. stack=''
+            4b. output: '0'. stack='
+
+
+
+this led to a tree of possible sequences.
+
+from top down in 2a branch:
+    output= '5 4 3 2 1 0'
+    output= '4 5 3 2 1 0'
+    output= '3 5 4 2 1 0'
+    output= '3 4 5 2 1 0'
+    output= '3 4 2 5 1 0'
+    output= '3 4 2 1 5 0'
+    output= '5 3 4 2 1 0'
+

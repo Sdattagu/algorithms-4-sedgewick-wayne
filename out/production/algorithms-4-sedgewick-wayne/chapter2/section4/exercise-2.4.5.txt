@@ -1,0 +1,24 @@
+pg 329
+
+**
+
+give the heap that results when the keys
+E A S Y Q U E S T I O N
+are inserted, in that order, into an initially empty max-oriented heap.
+
+**
+
+operation   array-content
+--------------------------------------------------
+insert(E)   [E]
+insert(A)   [E, A]
+insert(S)   [S, A, E] //'S' inserted as child of 'E' => swim(S) to swap with 'E' => 'S' is root now.
+insert(Y)   [Y, S, E, A] // 'Y' inserted as child of 'A' => swim(Y) to swap with 'A' => swim(Y) to swap with 'S' => 'Y' is root now.
+insert(Q)   [Y, S, E, A, Q] //'Q' inserted as child of 'S' -> children 'A' and 'S' => max-heap rooted at 'S' is still valid, no swim.
+insert(U)   [Y, S, U, A, Q, E] //'U' inserted as child of 'E' -> swim(U) to swap with 'E' => 'U' has reached 'maximum competence' (Y is bigger)
+insert(E)   [Y, S, U, A, Q, E, E] //'E' inserted as child of 'U' -> children 'E' and 'E' => max-heap rooted at 'U' is still valid, no swim.
+insert(S)   [Y, S, U, S, Q, E, E, A] //"S' inserted as child of 'A' -> swim(S) to swap with 'A' => 'S' cant go higher (Parent 'S' is equal).
+insert(T)   [Y, T, U, S, Q, E, E, A, S] //'T' inserted as right-child of 'S' (level-2) => swim(T) to swap with L-2 'S' => swim(T) to swap with L-1 'S' => 'T' cant go higher (Y is bigger).
+insert(I)   [Y, T, U, S, Q, E, E, A, S, I] //'I' inserted as left-child of 'Q' -> max-heap rooted at 'Q' is still valid, no swim.
+insert(O)   [Y, T, U, S, Q, E, E, A, S, I, O] //'I' inserted as right-child of 'Q' -> max-heap rooted at 'Q' is still valid, no swim.
+insert(N)   [Y, T, U, S, Q, N, E, A, S, I, O, E], //'N' inserted as left-child of 'E' (left-child of 'U'.) -> swim(N) to swap with 'E' -> 'N' cant go higher ('U' is bigger).

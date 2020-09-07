@@ -1,0 +1,11 @@
+**
+is an array that is sorted in decreasing order a 'max-oriented' heap?
+**
+
+yes. Consider data set: [E, D, C, B, A]. this leads to following almost complete binary tree
+
+              E
+          D       C
+      B      A
+
+assuming the array is arranged in level-order.

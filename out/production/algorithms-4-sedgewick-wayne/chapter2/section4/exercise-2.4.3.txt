@@ -1,0 +1,34 @@
+**
+provide priority-queue implementations that support 'insert' and 'remove the max',
+one for each of the following underlying data structures:
+    - unordered array
+    - ordered array
+    - unordered link list
+    - linked list
+
+give a table of worst-case bounds for each operation in each of four above implementations.
+**
+
+unordered array
+    insert op
+        O(1). Append it to the front/back. You don't care about whether the item you're inserting is in the right place compared to preceding items.
+    remove-max op
+        O(N). Since there's no guarantee that any item was put in its right place when inserted, you have to look thru array and figure out which item is biggest.
+
+ordered array
+    insert op
+        O(N). Since preceding items are in correct order, you need to maintain that order upon insert.
+    remove-max op
+        O(1). You did the work of keeping things ordered on each insert. The max is either front/back of arr. Just remove it
+
+unordered linked list
+    insert op
+        O(1). append the new node onto the tail of list.
+    remove-max op
+        O(N). walk through the linked list from head to tail, to find the maximum node. +overhead of managing links after removing max node.
+
+ordered link list
+    insert op
+        O(N). walk through the linked list from head to tail, to find the correct spot for new node. +overhead of managing links upon inserting new node.
+    remove-max op
+        O(1). max is = tail of ordered linked list, don't even have to do any pointer management.

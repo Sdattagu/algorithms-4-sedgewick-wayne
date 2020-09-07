@@ -1,0 +1,27 @@
+**
+Criticize the following idea: To implement 'find the maximum' in constant time,
+why not use a stack or a queue, but keep track of the maximum value inserted so far,
+then return that value for 'find the maximum'?
+**
+
+If we implement priority queue (pqueue) as FIFO queue | LIFO stack.
+when we do an insert operation, we will compare with current stack-top | queue-front.
+We push | enqueue, AND if the compare tells us that the insert value is larger than current stack-top | queue-front, we will mark it as 'maximum' as of that insert op (max-<op-num>).
+However, when we pop | dequeue:
+    stack:
+        pop() removes the top, but that is not necessarily the 'current' max. Consider input: insert(2); insert(3); insert(1).
+        '1' gets removed, but '3' is the actual max as of those three inserts.
+    queue:
+        dequeue() removes the front, but that's also not necessarily the 'current max'.
+
+ex. LIFO stack
+opA: insert(2); => {2 (max-A)}
+opB: insert(3); => {2 (max-A), 3 (max-B)}
+opC: insert(1); => {2 (max-A), 3 (max-C), 1}
+opD: remove-max() -> pop() -> {2 (max-A), 3 (max-C)} => 1 (incorrect)
+
+ex. FIFO queue
+opA: insert(2); => {2 (max-A)}
+opB: insert(3); => {2 (max-A), 3 (max-B)}
+opC: insert(1); => {2 (max-A), 3 (max-C), 1}
+opD: remove-max() -> dequeue() -> {3 (max-C), 1} => 2 (incorrect)

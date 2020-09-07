@@ -1,0 +1,6 @@
+**
+
+Design a linear-time algorithm to check whether
+an array pq[] is a min-oriented heap.
+
+**

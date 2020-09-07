@@ -1,0 +1,43 @@
+pg 329
+
+**
+
+using conventions of 2.4.1, give sequence of heaps produced when
+operations P R I O *  R * * I * T * Y * * * Q U E * * * U * E
+are performed on an initially empty max-oriented heap.
+
+letter means insert. * means remove-max.
+
+**
+
+pg 325 heap cons and sortdown
+pg. 316 learn how sink works
+pg. 315 how swim works
+
+operation   argument    return-value    size (N)    heap content (level order array format)
+------------------------------------------------------------------------------------
+insert      P                           1       [P]
+insert      R                           2       [R, P] // R is inserted as left child of P => swim(R) results in swap(P,R) => R is now root
+insert      I                           3       [R, P, I] // I inserted as right-child of R. all good.
+insert      O                           4       [R, P, I, O] // O inserted as left-child of 'P'. sub-heap @ 'P' still valid.
+remove-max              R               3       [P, O, I] // swap(R, heap-end: {arr[N-1]} -> O) => sink(O): {swap(O, cmp(P,I): {P > I ? P : I} -> P}). NOTE: cmp returns larger of two children in max heap.
+insert      R                           4       [R, P, I, O] // R inserted as left-child of O => swim(R): swap(O, R) => swim(R): swap(R, P).
+remove-max              R               3       [P, O, I] // swap(R, heap-end -> O) => sink(O) -> swap(O, cmp(P,I) -> P).
+remove-max              P               2       [O, I] //swap(P, head-end -> I} => remove(P) => sink(I) -> swap(I, O). NOTE: O is only child of I after P is removed.
+insert      I                           3       [O, I, I] // I inserted as right-child of O.
+remove-max              O               2       [I, I] // swap(O, heap-end -> I) => remove(O).
+insert      T                           3       [T, I, I] // T inserted as right-child of I => swim(T) -> swap(T, I).
+remove-max              T               2       [I, I] // swap(T, heap-end -> I). remove(T).
+insert      Y                           3       [Y, I, I] // Y inserted as right-child of I => swim(Y) -> swap(I, Y).
+remove-max              Y               2       [I, I] // swap(Y, heap-end -> I) => remove(Y).
+remove-max              I               1       [I] // swap(I, heap-end -> I) => remove(I).
+remove-max              I               0       []  // remove(I).
+insert      Q                           1       [Q] // insert as root node.
+insert      U                           2       [U, Q] // insert U as left-child of Q => swim(U) -> swap(Q, U).
+insert      E                           3       [U, Q, E] // insert E as right-child of U.
+remove-max              U               2       [Q, E] // swap(U, heap-end -> E) => remove(U) => sink(E) -> swap(E, Q).
+remove-max              Q               1       [E] // swap(Q, heap-end -> E) => remove(Q).
+remove-max              E               0       []  // remove(E).
+insert                  U               1       [U] // insert U as root.
+remove-max              U               0       [] // remove(U).
+insert      E                           1       [E] // insert E as root.

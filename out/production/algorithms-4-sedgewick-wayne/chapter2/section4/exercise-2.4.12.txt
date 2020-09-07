@@ -1,0 +1,10 @@
+**
+
+Suppose that your app will have a huge number of 'find the maximum'
+operations, but relatively small number of 'insert' and 'remove the maximum' operations.
+Which priority-queue implementation do you think would be most effecitve:
+    - heap
+    - unordered array
+    - ordered array
+
+**

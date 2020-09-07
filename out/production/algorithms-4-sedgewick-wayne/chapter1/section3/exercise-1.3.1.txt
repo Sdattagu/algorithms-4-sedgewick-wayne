@@ -1,0 +1,14 @@
+**
+
+Add a method isFull() to FixedCapacityStackOfString
+
+**
+
+public class FixedCapacityStackOfStrings {
+    private String[] a;
+    private int N;
+    ...
+    private boolean isFull() {
+        return a.length == N;
+    }
+}

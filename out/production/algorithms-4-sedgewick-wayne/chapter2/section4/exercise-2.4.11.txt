@@ -1,0 +1,10 @@
+**
+
+Suppose that your application will have a huge number of insert operations,
+but only a few 'remove the max' operations.
+Which priority-queue implementation do you think would be most effective:
+    - heap
+    - unordered array
+    - ordered array
+
+**

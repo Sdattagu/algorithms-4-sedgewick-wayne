@@ -8,3 +8,7 @@ Which priority-queue implementation do you think would be most effecitve:
     - ordered array
 
 **
+
+We want to use a heap or ordered array.
+If we use an ordered array, we'd have to insert items in O(N), but we get access to max in O(1).
+Heap lets us insert in logarithmic time O(logn), and also gives us access to max in O(1).

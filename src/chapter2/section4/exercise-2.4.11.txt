@@ -8,3 +8,10 @@ Which priority-queue implementation do you think would be most effective:
     - ordered array
 
 **
+
+if we used a heap, then inserts and remove the max would both be logarithmic.
+This is alright but since we know there are inserts, maybe we can use this info to choose a better data structure for the problem.
+
+if we used an unordered array, inserts would be constant, but removals would take the time for searching.
+
+if we used an ordered array, inserts would be linear, but removals would be constant. We want an unordered array.

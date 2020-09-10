@@ -3,3 +3,66 @@
 Describe a way to avoid the j < N test in sink().
 
 **
+
+                               T                    L1
+                    H                   R           L2
+              P           S                         L3
+
+
+private void sink(int k) {
+    while (2*k <= N) {
+        int j = 2*k;
+        if (j < N && less(j, j+1)) j++;
+        if (!less(k, j)) break;
+        exch(k, j);
+        k = j;
+    }
+}
+
+if we look at 'H' on level 2 of the tree, we notice it has two children, 'P' and 'S'.
+We need to sink 'H', so k=indexOf('H') = 2 //not zero-indexed level-order array.
+We let j be the index of the left child of 'H'. This is 'P'.. j+1 = 'Q'.
+
+The j<N check happens, because it is possible for j to be the last node in the tree (N).
+In this case, j+1 = N+1, which is out of bounds exception.
+To avoid this, we can make:
+2*k <= N
+be
+2*k < N.
+
+So, the largest value of 2*k, is the rightmost left-child of its parent node in level n-1 (second to last level).
+This guarantees there'll be a j+1, IF the parent node also has a right child.
+
+HOWEVER, what if the tree instead looks like this:
+
+                              T                     L1
+                    H                   R           L2
+              P                                     L3
+
+'H' no longer has a right-child. If we still let k =2, then j = 2*k = 4, then the sink won't happen since 2*k (4) is NOT less than N (4)!
+This introduces a special case which must be handled, adding some code to sink().
+
+If 2*k = N, that means the last node in the tree is a left-child of its parent. There isn't a right-child, since we're looking at the Nth node already.
+So in this case, we'd just want to check if left-child is less than its parent. If it is, we do the switch.
+All other cases (2*k < N) are handled by the adjusted while loop in the code above.
+
+So the final sink() looks like this:
+
+private void sink(int k) {
+    while (2*k < N) {
+        int j = 2*k;
+        if (less(j, j+1)) j++;
+        if (!less(k, j)) break;
+        exch(k, j);
+        k = j;
+    }
+
+    //If we reached the n-1 level of the heap and it only has 1 child (the left child), we need one more verification
+    if (2 * k == N) {
+        //If the current element is smaller than its child, exchange them
+        if (less(k, 2 * k)) {
+            exch(k, 2 * k);
+        }
+    }
+}
+

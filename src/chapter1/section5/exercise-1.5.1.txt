@@ -1,0 +1,53 @@
+**
+Show  the  contents  of  the id[]  array  and  the  number  of  times  the  array  is  accessed
+for  each  input  pair  when  you  use  quick-find  for  the  sequence 9-0 3-4 5-8 7-2 2-1 5-7 0-3 4-2.
+**
+
+1) instantiate id[] array with sites 0-9, with self-indexing.
+    Each index represents a site. Components are composed of sites.
+    initially You can think of it as 9 single node trees/components.
+    [0 1 2 3 4 5 6 7 8 9].
+
+2) then, call quick-find on with the above sequence.
+   If quick-find sees that the two sites are in different components,
+        we call union on that pair, and iterate through id[] to update it accordingly.
+    union(9, 0) ->
+
+        [0 1 2 3 4 5 6 7 8 9] -> [0 1 2 3 4 5 6 7 8 0]
+
+        array is accessed twice for quick-find(p) and quick-find(q).
+        array is accessed ten times for iterating through id[] to check for changing site p to site q. (put in same component, where q is parent.)
+            When we find a site 'p', we access array at that index to change it to site 'q'. This happens once in this pair.
+        ==> 13.
+
+    union(3, 4) ->
+
+        [0 1 2 3 4 5 6 7 8 0] -> [0 1 2 4 4 5 6 7 8 0]
+        ==> 2 + 10 + 1 = 13.
+
+    union(5,8) ->
+        [0 1 2 4 4 5 6 7 8 0] -> [0 1 2 4 4 8 6 7 8 0]
+        ==> 13.
+
+    union(7,2) ->
+        [0 1 2 4 4 8 6 7 8 0] -> [0 1 2 4 4 8 6 2 8 0]
+        ==> 13.
+
+    union(2,1) ->
+        [0 1 2 4 4 8 6 2 8 0] -> [0 1 1 4 4 8 6 1 8 0]
+        ==> 2 + 10 + 2 = 14.
+
+    union(5,7) ->
+        [0 1 1 4 4 8 6 1 8 0] -> [0 1 1 4 4 1 6 1 1 0]
+        ==> 2 + 10 + 2 = 14.
+
+    union(0,3) ->
+        [0 1 1 4 4 1 6 1 1 0] -> [4 1 1 4 4 1 6 1 1 4]
+        ==> 2 + 10 + 2 = 14.
+
+    union(4,2) ->
+        [4 1 1 4 4 1 6 1 1 4] -> [1 1 1 1 1 6 1 1 1 1]
+        ==> 2 + 10 + 4 = 16.
+
+
+

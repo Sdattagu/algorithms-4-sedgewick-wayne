@@ -1,0 +1,7 @@
+**
+Draw the BST that results when you insert the keys E A S Y Q U E S T I O N,
+in that order (associating the value i with the ith key, as per the convention in the text)
+into an initially empty tree. How many compares are needed to build the tree?
+**
+
+alg 3.3 search and insert in bst pg. 399

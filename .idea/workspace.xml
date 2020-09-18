@@ -41,12 +41,28 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2321839" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Exercise19">
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+    </configuration>
+    <configuration name="CertifyHeap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="chapter2.section4.CertifyHeap" />
+      <module name="algorithms-4-sedgewick-wayne" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Exercise19" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="chapter2.section4.Exercise19" />
+      <module name="algorithms-4-sedgewick-wayne" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="StackClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="chapter1.section3.StackClient" />
@@ -71,6 +87,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Exercise19" />
+        <item itemvalue="Application.CertifyHeap" />
         <item itemvalue="Application.StackClient" />
       </list>
     </recent_temporary>
@@ -88,42 +106,88 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599506215391" />
-    <state width="1921" height="368" key="GridCell.Tab.0.bottom" timestamp="1599624783498">
+    <state width="1921" height="349" key="GridCell.Tab.0.bottom" timestamp="1600450142475">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="368" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599624783498" />
-    <state width="1921" height="368" key="GridCell.Tab.0.center" timestamp="1599624783498">
+    <state width="1921" height="349" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600450142475" />
+    <state width="1921" height="349" key="GridCell.Tab.0.center" timestamp="1600450142475">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="368" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599624783498" />
-    <state width="1921" height="368" key="GridCell.Tab.0.left" timestamp="1599624783498">
+    <state width="1921" height="349" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600450142475" />
+    <state width="1921" height="349" key="GridCell.Tab.0.left" timestamp="1600450142475">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="368" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599624783498" />
-    <state width="1921" height="368" key="GridCell.Tab.0.right" timestamp="1599624783498">
+    <state width="1921" height="349" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600450142475" />
+    <state width="1921" height="349" key="GridCell.Tab.0.right" timestamp="1600450142475">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="368" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599624783498" />
-    <state width="1921" height="368" key="GridCell.Tab.1.bottom" timestamp="1599624783499">
+    <state width="1921" height="349" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600450142475" />
+    <state width="1921" height="349" key="GridCell.Tab.1.bottom" timestamp="1600450142475">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="368" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599624783499" />
-    <state width="1921" height="368" key="GridCell.Tab.1.center" timestamp="1599624783499">
+    <state width="1921" height="349" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600450142475" />
+    <state width="1921" height="349" key="GridCell.Tab.1.center" timestamp="1600450142475">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="368" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599624783499" />
-    <state width="1921" height="368" key="GridCell.Tab.1.left" timestamp="1599624783499">
+    <state width="1921" height="349" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600450142475" />
+    <state width="1921" height="349" key="GridCell.Tab.1.left" timestamp="1600450142475">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="368" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599624783499" />
-    <state width="1921" height="368" key="GridCell.Tab.1.right" timestamp="1599624783499">
+    <state width="1921" height="349" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600450142475" />
+    <state width="1921" height="349" key="GridCell.Tab.1.right" timestamp="1600450142475">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="368" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599624783499" />
-    <state x="440" y="94" key="SettingsEditor" timestamp="1599514075227">
+    <state width="1921" height="349" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600450142475" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1599957854708">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1480" y="94" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1599506785199" />
-    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599514075227" />
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599957854708" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/chapter2/section4/Exercise19.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/chapter2/section4/Exercise19.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/chapter2/section4/Exercise19.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/chapter2/section4/Exercise19.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/chapter2/section4/Exercise19.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/chapter2/section4/Exercise19.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/chapter2/section4/Exercise19.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/chapter2/section4/Exercise19.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

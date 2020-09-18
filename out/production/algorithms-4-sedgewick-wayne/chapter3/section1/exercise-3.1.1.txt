@@ -1,0 +1,10 @@
+**
+Wr i te   a   c l i e n t   t h a t   c re a te s   a   s y m b o l   t a b l e
+m a p p i n g   l e t te r   g r a d e s   to   n u m e r i c a l  scores,
+as in the table below, then reads from standard input a list of letter grades and computes and prints the GPA (the average of the numbers corresponding to the grades).
+
+A+   A    A-   B+   B    B-   C+   C    C-   D    F
+4.33 4.00 3.67 3.33 3.00 2.67 2.33 2.00 1.67 1.00 0.00
+**
+
+a symbol table client -> pg. 372

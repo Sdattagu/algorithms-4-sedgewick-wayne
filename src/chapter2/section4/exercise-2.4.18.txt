@@ -1,0 +1,59 @@
+**
+In MaxPQ, suppose that a client calls insert() with an item that is larger than
+all items in the queue, and then immediately calls delMax().
+Assume that there are no duplicate keys. Is the resulting heap identical
+to the heap as it was before these operations?
+
+Answer same question for two insert() operations (the first with a key larger
+than all keys in the queue, and second for a key larger than that one.), followed
+by two del-max() operations.
+**
+
+    1 Insert, 1 Del-max.
+
+                    6
+             5            4
+           3    2       1
+
+           insert(7).
+
+                    7
+             5            6
+           3    2       1   4
+
+            del-max.
+
+                    6
+             5            4     Yes.
+           3    2       1
+
+    2 Inserts, 2 Del-Max.
+
+                     6
+                5        4
+              3   2    1
+
+              insert(7)
+
+                      7
+               5            6
+             3    2       1   4
+
+             insert(8).
+
+                        8
+                  7          6
+               5    2      1    4
+             3
+
+             del-max #1.
+
+                          7
+                     5        6
+                   3    2    1   4
+
+             del-max #2.
+
+                         6
+                      5      4  Yes.
+                   3    2   1

@@ -1,0 +1,23 @@
+**
+Show that the number of different triples that can be chosen from N items is precisely N (N-1)(N-2)/6.
+Hint : Use mathematical induction.
+**
+
+This is a combination without repetition.
+This means that a triplet ABC and ACB are considered different triplets, even though they contain the same letters.
+order does not matter, but the same item can't appear twice in a given triplet.
+
+What is the order mattered? i.e. what if ABC and ACB are considered different triplets?
+This would be a permutation without repetition.
+
+if we want all triplets from N items where order does matter, then it is:
+N * (N-1) * (N-2).
+
+Then, if we don't care about order, we want to remove the triplets that are 'duplicate'.
+
+in the permutation, for three items in a triplet, there was 3 != 3 * 2 * 1 = 6 possible triplets for the same three items.
+Since those 6 are now considered the 'same' -> it's just 1 triplet instead of 6.
+
+We can divide the number from permutation case by a factor of 6.
+
+i.e. (N * (N-1) * (N-1)) / 6

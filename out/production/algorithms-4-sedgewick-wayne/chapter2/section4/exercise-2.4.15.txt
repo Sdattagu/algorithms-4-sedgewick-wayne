@@ -4,3 +4,20 @@ Design a linear-time algorithm to check whether
 an array pq[] is a min-oriented heap.
 
 **
+
+a min-heap is valid if the value in every node is smaller than its children.
+an array pq[] is level ordered, we can use following indexing scheme:
+parent: k
+left-child: 2k
+right-child: 2k+1
+
+we can write a recursive method which checks whether the children of a given node are larger,
+and then call the same method on its children. This will visit each child once, the only work done
+in each call is the comparison of less(parent, child).
+Since each node is visited once, and a constant amount of work is done, this is linear time.
+
+See certifyHeap.java for code and test.
+
+There is some space use for the recursive call stack.
+
+

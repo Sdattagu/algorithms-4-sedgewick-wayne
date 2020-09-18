@@ -1,0 +1,62 @@
+**
+Prove that building a minimum-oriented priority queue of size k, then doing N-k
+replace the minimum (insert followed by remove the minimum) operations
+leaves the k largest of the N items in the priority queue.
+**
+
+Let k = 5.
+We build a min-PQ of size 5.
+
+        3
+     4      5       [3, 4, 5, 6, 7].
+  6     7
+
+In this heap, 3 is the kth (5th) largest.
+
+When we do a replace-the-min op, it is composed of two ops in sequence:
+    insert(item)
+    remove-the-min()
+
+When we insert an element, there are 3 cases:
+    Inserted element is larger than min element. I.e., 8.
+        After insertion, the heap looks like this:
+
+               3
+         4          5
+      6     7    8
+
+        After insertion, the size of the heap, N, is 6. The kth largest of N is 4.
+
+        Now, we do the remove-min() operation. The heap looks like this:
+
+              4
+           6    5   [4, 6, 5, 8, 7].
+         8   7
+
+        Notice that the kth largest of N (4) is still in the heap after we finish replace-the-min.
+
+    Inserted element is the same size as the min element. I.e. 3.
+
+                    3
+                 4      3       [3, 4, 3, 6, 7 ,5]. N =6 after the insert. Kth largest of N is 3.
+               6   7   5
+
+        remove-min() -> sink().
+
+                    3
+                 4      5   [3, 4, 5, 6, 7]. We still have the kth largest of N; 3.
+              6     7
+
+    Inserted element is smaller than the min element. I.e. 2.
+
+        insert(2) -> swim -> swim.
+
+                 2
+              4     3   [2, 4, 3, 6, 7, 5]. Kth largest of N is 3.
+            6  7   5
+
+        remove-min -> sink().
+
+                3
+             4     5    [3, 4, 5, 6, 7]. We still have kth largest of N; 3.
+          6     7

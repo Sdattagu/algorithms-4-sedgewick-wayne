@@ -1,0 +1,5 @@
+**
+Draw the 2-3 tree that results when you insert the keys E A S Y Q U T I O N in that order into an initially empty tree.
+**
+
+2-3 search trees covered pg.424 - pg.431

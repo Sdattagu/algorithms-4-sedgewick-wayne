@@ -1,11 +1,66 @@
 **
-
-What is the minimum number of items that must be exchanged during a 'remove-max' operation
-in a heap of size N, with no duplicate keys?
-
-Give a heap of size 15 for which the minimum is achieved.
-
-Answer the same questions for two and three successive 'remove-max' operations.
-
+    What is the minimum number of items that must be exchanged during a 'remove-max' operation
+    in a heap of size N, with no duplicate keys?
 **
 
+When we do a remove-max, we exchange the root of the heap (largest item), with the Nth node of the heap.
+The Nth node is either the smallest (i.e., all other N-1 nodes are larger than it.), or
+it is the second-smallest
+    (i.e., the Nth node's sibling (left or right child of the parent of N), is smaller - but they're both smaller than the parent.)
+After this exchange, the Nth item is now at the root of the heap. It has to sink down.
+    The minimum exchanges is achieved if the Nth item is smaller than its children (at root), but larger than the children of which child it was exchanged with.
+        In this case, there would only be 2 exchanges total.
+
+**
+    Give a heap of size 15 for which the minimum is achieved.
+**
+
+if we had a heap with N=3, then for minimum exchanges:
+
+            100
+         99      98
+
+add another layer, expand it to N=7:
+
+            100
+        99       98
+      1    2   97  96
+
+N=15
+              100
+        99            98
+     6     5       97     96
+  4    3  2  1    95 94  93 92
+
+**
+    Answer the same questions for two and three successive 'remove-max' operations.
+**
+    For two successive remove-max: minimum number of exchanges is 5.
+
+                            100
+                    99              98
+               91      92       90       97
+             89  88   85  84   87  86   96 95
+
+    after first remove-max, heap looks like this: there were 2 exchanges.
+
+                           99
+                   95              98
+               91      92      90      97
+             89  88   85  84  87  86  96
+
+    after second remove-max, heap looks like this: there were 3 exchanges.
+
+                           98
+                  95              97
+              91      92      90      96
+            89  88   85  84  87  86
+
+    For three successive remove-max: there needs to be 3 more exchanges on top of the ones done for the two prior 'remove-max' ops, for a total of 8.
+
+        After third remove-max op, heap looks like this: there were 3 exchanges.
+
+                                  97
+                          95              96
+                      91      92      90      86
+                    89  88   85  84  87

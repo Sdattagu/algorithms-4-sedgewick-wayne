@@ -1,0 +1,46 @@
+**
+For N=32, give arrays of items that make heapsort use as
+    many,
+    and as few,
+compares as possible.
+**
+
+Heapsort is divided into two phases: heap construction, in which the unordered array is converted into a min/max -heap,
+and sortdown, in which we perform multiple consecutive remove-max | remove-min ops, until heap is empty, to construct and ordered
+result.
+
+as many compares as possible case:
+
+For 32 node heap, in heap construction phase, we have:
+    7 heaps of size 3, and 1 heap of size 4.
+        Max compares possible in a 3 node heap is 2;
+            First comparison is between left- and right- child, to check which one is larger/smaller.
+            Second compare is between parent and the winner of above compare, to see if parent need to sink.
+        i.e. we have 14 compares.
+        Max compares possible in a 4 node heap is 3.
+        => 17 compares.
+
+    3 heaps of size 7, 1 heap of size 8.
+        //TODO: figure out number of comparisons here.
+    1 heap of size 15, 1 heap of size 16.
+        //TODO: figure out number of comparisons here.
+    1 heap of size 32.
+        //TODO: figure out number of comparisons here.
+
+For 32 node heap, in sortdown phase, we have:
+    1st node: 8 compares.
+    2nd node: 8 compares.
+    3rd node: 8 compares.
+    ...
+    17th node:
+    ...
+    25th node:
+    ...
+    29th node:
+    30th node:
+    31 and 32 node:
+
+Example: The max-heap with 1 as root, and 32 as last node.
+
+For opposite case (minimum compares), it's the converse of above.
+Max-heap with 32 as root, 1 as last node.

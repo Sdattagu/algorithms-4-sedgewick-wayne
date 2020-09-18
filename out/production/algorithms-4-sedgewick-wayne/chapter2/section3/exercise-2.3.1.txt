@@ -1,0 +1,5 @@
+**
+Show, in the style of the trace given with partition(),  how  that  method  partitions the array E A S Y Q U E S T I O N.
+**
+
+quicksort partitioning on pg. 291

@@ -1,0 +1,48 @@
+**
+Show the contents of the id[] array and the number of times the array is accessed for each input
+pair when you use weighted quick-union for the sequence 9-0, 3-4, 5-8, 7-2, 2-1, 5-7, 0-3, 4-2
+**
+
+                        id[]
+        -------------------------------------
+p q     0   1   2   3   4   5   6   7   8   9           0   1   2   3   4   5   6   7   8   9
+        -------------------------------------
+9 0     0   1   2   3   4   5   6   7   8   0           0   1   2   3   4   5   6   7   8
+                                                         \
+                                                          9
+
+3 4     0   1   2   4   4   5   6   7   8   0           0   1   2   3   4   5   6   7   8
+                                                         \               \
+                                                          9               3
+
+5 8     0   1   2   4   4   8   6   7   8   0           0   1   2   4   6   7   8
+                                                         \           \           \
+                                                          9           3           5
+
+7 2     0   1   2   4   4   8   6   2   8   0           0   1   2   3    4   6   8
+                                                         \       \        \       \
+                                                          9       7        3       5
+
+2 1     0   2   2   4   4   8   6   2   8   0           0      2      4   6    8            // Although quick-union policy dictates q becomes parent of p, since size(p) > size(q), we make 1 a child of 2.
+                                                         \    / \      \        \
+                                                          9  1   7      3        5
+
+5 7     0   2   2   4   4   8   6   2   2   9           0        2      4  6            // We check the size of the trees which are roots of 5 (8) and 7 (2).
+                                                         \     / | \     \              // Since size of 2's tree > size of 8's tree, the subtree rooted at 8 becomes a child of 2.
+                                                          9   1  7  8     3
+                                                                   /
+                                                                  5
+
+0 3     0   2   2   4   0   8   6   2   2   0           0         2       6        // 0's tree and 3's root tree (4) are same size -> we can just make 0 the representative node.
+                                                       / \      / | \
+                                                      4   9    1  7  8
+                                                       \             /
+                                                        3           5
+
+4 2     0   2   2   4   0   8   6   2   2   0                        2               6
+                                                                /  /  |   \
+                                                               1  7   8     0
+                                                                     /    /   \
+                                                                    5    4      9
+                                                                          \
+                                                                           3
